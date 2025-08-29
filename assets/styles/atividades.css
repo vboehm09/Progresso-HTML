@@ -1,0 +1,10 @@
+.flex-container {
+    width: 20%;
+    height: 200px;
+    background-color: blue;
+    margin: 0 auto 20px;
+    border-bottom: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 45px;
+}
