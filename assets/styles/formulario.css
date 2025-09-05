@@ -1,0 +1,529 @@
+/* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #ff7a00, #ffb347, #ff6b35);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background com padrão de folhas */
+.leaf-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q30 20 20 40 Q30 60 50 50 Q70 60 80 40 Q70 20 50 10" fill="%23228B22" opacity="0.1"/></svg>')
+    repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Slides */
+.slide {
+  display: none;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Caixa de conteúdo principal */
+.content-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px;
+  backdrop-filter: blur(10px);
+  border: 3px solid #ff7a00;
+}
+
+/* Tipografia */
+.title {
+  color: #ff4500;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #ff6b35;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Caixa de capacidades */
+.capacities {
+  background: rgba(255, 122, 0, 0.1);
+  border-left: 5px solid #ff7a00;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.capacities h3 {
+  color: #ff4500;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.capacities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.capacities li {
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.capacities li::before {
+  content: "🍃";
+  position: absolute;
+  left: 0;
+}
+
+/* Exemplos de código */
+.code-example {
+  background: #1e1e1e;
+  color: #f8f8f2;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  overflow-x: auto;
+  border: 2px solid #ff7a00;
+}
+
+.code-example pre {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Navegação */
+.navigation {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.nav-btn {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+.nav-btn:hover {
+  background: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+}
+
+.nav-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Contador de slides */
+.slide-counter {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(255, 69, 0, 0.9);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* Demonstração de formulário */
+.form-demo {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 2px solid #ff7a00;
+}
+
+.form-demo input,
+.form-demo select,
+.form-demo textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #ff7a00;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-demo input:focus,
+.form-demo select:focus,
+.form-demo textarea:focus {
+  outline: none;
+  border-color: #ff4500;
+  box-shadow: 0 0 5px rgba(255, 69, 0, 0.3);
+}
+
+.form-demo button {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-demo button:hover {
+  background: #ff6b35;
+}
+
+.form-demo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Caixa de desafio */
+.challenge-box {
+  background: rgba(255, 140, 0, 0.1);
+  border: 3px dashed #ff8c00;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.challenge-title {
+  color: #ff4500;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Correção específica para slide 7 - texto dentro da caixa de desafio */
+.challenge-box p {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Rank ninja */
+.ninja-rank {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff4500, #ff8c00);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 5px;
+  box-shadow: 0 3px 10px rgba(255, 69, 0, 0.3);
+}
+
+/* Lista de jutsus (cards) */
+.jutsu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.jutsu-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ff7a00;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jutsu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 69, 0, 0.25);
+}
+
+.jutsu-card h3 {
+  color: #ff4500;
+  margin: 15px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.jutsu-card code {
+  background: rgba(255, 122, 0, 0.15);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
+  margin: 12px 0;
+  color: #cc3700;
+  border: 1px solid rgba(255, 122, 0, 0.3);
+}
+
+.jutsu-card p {
+  color: #333;
+  font-size: 1.05em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.emoji {
+  font-size: 2em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Caixas de aviso e dicas */
+.warning-box {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 5px solid #ff0000;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  color: #333;
+}
+
+.tip-box {
+  background: rgba(0, 255, 0, 0.1);
+  border-left: 5px solid #00ff00;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Animações adicionais */
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Estados de validação para formulários */
+input:valid {
+  border-color: #28a745;
+}
+
+input:invalid {
+  border-color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content-box {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+  }
+
+  .navigation {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .nav-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .slide-counter {
+    bottom: 15px;
+    left: 15px;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .jutsu-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-demo input[type="radio"],
+  .form-demo input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+  }
+
+  .form-demo label:has(input[type="radio"]),
+  .form-demo label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-box {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .code-example {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .jutsu-card {
+    padding: 15px;
+  }
+
+  .emoji {
+    font-size: 1.5em;
+  }
+}
+
+/* Melhorias para impressão */
+@media print {
+  .navigation,
+  .slide-counter {
+    display: none;
+  }
+
+  .slide {
+    display: block !important;
+    page-break-after: always;
+    min-height: auto;
+  }
+
+  .content-box {
+    box-shadow: none;
+    border: 2px solid #ff7a00;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+}
+
+/* Acessibilidade */
+.nav-btn:focus,
+.form-demo button:focus,
+.form-demo input:focus,
+.form-demo select:focus,
+.form-demo textarea:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Melhorias para modo escuro (se o usuário preferir) */
+@media (prefers-color-scheme: dark) {
+  .content-box {
+    background: rgba(30, 30, 30, 0.95);
+    color: #f0f0f0;
+  }
+
+  .form-demo {
+    background: rgba(40, 40, 40, 0.8);
+  }
+
+  .form-demo label {
+    color: #f0f0f0;
+  }
+}
+
+.clrw {
+  color: #f0f0f0;
+}
+
+/* Animações suaves para transições */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Estilos para estados hover em elementos interativos */
+.jutsu-card,
+.ninja-rank,
+.form-demo input,
+.form-demo select,
+.form-demo textarea {
+  transition: all 0.3s ease;
+}
+
+/* Indicadores visuais para campos obrigatórios */
+.form-demo input[required]:not([type="radio"]):not([type="checkbox"])::after {
+  content: "*";
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Estilização de checkboxes e radio buttons customizados */
+.form-demo input[type="radio"],
+.form-demo input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff4500;
+}
